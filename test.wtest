@@ -1,0 +1,38 @@
+import feroz.*
+import caperucita.*
+import cazador.*
+
+
+test "El lobo corre hacia el bossque" {
+  feroz.corre()
+  assert.equals(9,feroz.peso())
+  assert.notThat(feroz.estaSaludable())
+
+}test "El Lobo llega a la casa y se come a la Abuela" {
+    
+    feroz.corre()
+    feroz.corre()
+    feroz.comer(abuela)
+    assert.equals(13, feroz.peso())
+}
+test "Caperucita pierde una manzana en el camino" {
+ canasta.cantidadDeManzanas(5)
+ assert.equals(61, caperusitaRoja.peso())
+ 
+ 
+}
+test "El Lobo se come a Caperucita y sigue sin estar saludable" {
+  feroz.corre() 
+    feroz.corre() 
+    feroz.comer(abuela) 
+    canasta.cantidadDeManzanas(5) 
+    feroz.comer(caperusitaRoja)
+    assert.equals(19.1, feroz.peso())
+    assert.notThat(feroz.estaSaludable())
+}
+test "Feroz sufre una crisis porque está débil" {
+    
+    cazador.interactuar(feroz) 
+    
+    assert.equals(10, feroz.peso())
+}
